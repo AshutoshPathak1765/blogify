@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<%- include("./partials/head.ejs") %>
+<title>Blog</title>
+</head>
+<body>
+<%- include("./partials/navbar.ejs") %>
+<div class="container mt-3">
+<form method="post" action="/blog" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="coverImage" class="form-label">Cover Image</label>
+        <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+      </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" id="title">
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label">Body</label>
+        <textarea class="form-control" name="body" id="body" rows="3"></textarea>
+      </div>
+      <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+</div>
+<%- include("./partials/script.ejs")%>
+</body>
+</html>

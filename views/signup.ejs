@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<%- include("./partials/head.ejs") %>
+<title>Signup</title>
+<style>
+.signin-form{
+  display: flex;
+  flex-direction: column;
+  width: 650px;
+  gap: 10px;
+  padding: 20px;
+}
+.container {
+  margin-top: -100px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+  <%- include("./partials/navbar.ejs") %>
+  <h1 class="text-center">Signup Page</h1>
+  <div class="container">
+    <form class="border rounded signin-form" method="post" action="/user/signup">
+        <div class="mb-3">
+            <label for="fullname" class="form-label">FullName</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" aria-describedby="email">
+          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-primary">Signup</button>
+      </form>
+    </div>
+    <%-include("./partials/script.ejs") %>
+</body>
+</html>
